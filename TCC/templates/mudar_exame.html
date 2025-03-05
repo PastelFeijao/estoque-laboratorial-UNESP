@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" media="screen" />
+    <title>Editar Exame</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid fixed-top" id="navbar">
+                <a class="navbar-brand" href="/tela_inicial">
+                    <img id="imglogo" src="{{ url_for('static', filename='logomeiopaia.png') }}" alt="" height="50"
+                        width="70" class="d-inline-block align-text-top">
+                </a>
+            </div>
+        </nav>
+    </header><br>
+
+    <main id="maincontent">
+        <div id="div" class="container mt-5">
+            <h3 class="mx-auto p-4 mt-3 text-center">Editar Exame</h3>
+
+            <form method="POST" action="{{ url_for('editar_exame', id=exame[0]) }}">
+
+                <label for="nome_exame">Nome do Exame:</label>
+                <input type="text" id="finput" class="form-control mx-auto" name="nome_exame" required value="{{ exame[1] }}">
+
+                <label for="fitc">FITC:</label>
+                <input type="text" id="finput" class="form-control mx-auto" name="fitc" value="{{ exame[2] }}">
+
+                <label for="quantidade1">Quantidade FITC:</label>
+                <input type="number" id="finput" class="form-control mx-auto" name="quantidade1" min="0" value="{{ exame[3] }}">
+
+                <label for="pe">PE:</label>
+                <input type="text" id="finput" class="form-control mx-auto" name="pe" value="{{ exame[4] }}">
+
+                <label for="quantidade2">Quantidade PE:</label>
+                <input type="number" id="finput" class="form-control mx-auto" name="quantidade2" min="0" value="{{ exame[5] }}">
+
+                <label for="dupli_pe">PE Duplicado:</label>
+                <input type="text" id="finput" class="form-control mx-auto" name="dupli_pe" value="{{ exame[22] }}">
+
+                <label for="du[]">Quantidade PE Duplicado:</label>
+                <input type="number" id="finput" class="form-control mx-auto" name="dupli1" min="0" value="{{ exame[23] }}">
+
+                <label for="ecd">ECD:</label>
+                <input type="text" id="finput" class="form-control mx-auto" name="ecd" value="{{ exame[6] }}">
+
+                <label for="quantidade3">Quantidade ECD:</label>
+                <input type="number" id="finput" class="form-control mx-auto" name="quantidade3" min="0" value="{{ exame[7] }}">
+
+                <label for="pc5.5">PC 5.5:</label>
+                <input type="text" id="finput" class="form-control mx-auto" name="pc55" value="{{ exame[8] }}">
+
+                <label for="quantidade4">Quantidade PC 5.5:</label>
+                <input type="number" id="finput" class="form-control mx-auto" name="quantidade4" min="0" value="{{ exame[9] }}">
+
+                <label for="pc7">PC 7:</label>
+                <input type="text" id="finput" class="form-control mx-auto" name="pc7" value="{{ exame[10] }}">
+
+                <label for="quantidade5">Quantidade PC 7:</label>
+                <input type="number" id="finput" class="form-control mx-auto" name="quantidade5" min="0" value="{{ exame[11] }}">
+
+                <label for="apc">APC:</label>
+                <input type="text" id="finput" class="form-control mx-auto" name="apc" value="{{ exame[12] }}">
+
+                <label for="quantidade6">Quantidade APC:</label>
+                <input type="number" id="finput" class="form-control mx-auto" name="quantidade6" min="0" value="{{ exame[13] }}">
+
+                <label for="a700">A700:</label>
+                <input type="text" id="finput" class="form-control mx-auto" name="a700" value="{{ exame[14] }}">
+
+                <label for="quantidade7">Quantidade A700:</label>
+                <input type="number" id="finput" class="form-control mx-auto" name="quantidade7" min="0" value="{{ exame[15] }}">
+
+                <label for="a750">A750:</label>
+                <input type="text" id="finput" class="form-control mx-auto" name="a750" value="{{ exame[16] }}">
+
+                <label for="quantidade8">Quantidade A750:</label>
+                <input type="number" id="finput" class="form-control mx-auto" name="quantidade8" min="0" value="{{ exame[17] }}">
+
+                <label for="dupli_a750">A750 Duplicado:</label>
+                <input type="text" id="finput" class="form-control mx-auto" name="dupli_a750" value="{{ exame[24] }}">
+
+                <label for="dupli2">Quantidade A750 Duplicado:</label>
+                <input type="number" id="finput" class="form-control mx-auto" name="dupli2" min="0" value="{{ exame[25] }}">
+
+                <label for="pb">PB:</label>
+                <input type="text" id="finput" class="form-control mx-auto" name="pb" value="{{ exame[18] }}">
+
+                <label for="quantidade9">Quantidade PB:</label>
+                <input type="number" id="finput" class="form-control mx-auto" name="quantidade9" min="0" value="{{ exame[19] }}">
+
+                <label for="dupli_pb">PB Duplicado:</label>
+                <input type="text" id="finput" class="form-control mx-auto" name="dupli_pb" value="{{ exame[26] }}">
+
+                <label for="dupli3">Quantidade PB Duplicado:</label>
+                <input type="number" id="finput" class="form-control mx-auto" name="dupli3" min="0" value="{{ exame[27] }}">
+
+                <label for="ko">KO:</label>
+                <input type="text" id="finput" class="form-control mx-auto" name="ko" value="{{ exame[20] }}">
+
+                <label for="quantidade10">Quantidade KO:</label>
+                <input type="number" id="finput" class="form-control mx-auto" name="quantidade10" min="0"
+                    value="{{ exame[21] }}">
+
+                <button type="submit" class="mt-2" id="botaoEnviar">Salvar</button>
+                <a href="{{ url_for('exibe_exame') }}" class="btn btn-secondary mt-2" id="botaoCancelar">Cancelar</a>
+            </form>
+
+            <br>
+        </div>
+    </main>
+    <footer id="footer" class="mt-4">todos os direitos reservados</footer>
+</body>
+
+</html>

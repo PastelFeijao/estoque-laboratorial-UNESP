@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhar estoque</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" media="screen" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid fixed-top" id="navbar">
+                <a class="navbar-brand" href="/tela_inicial">
+                    <!-- Logo -->
+                    <img id="imglogo" src="{{ url_for('static', filename='logomeiopaia.png') }}" alt="" srcset=""
+                        height="50" width="70" class="d-inline-block align-text-top">
+                </a>
+            </div>
+        </nav>
+    </header><br><br>
+
+    <main id="maincontent" class="container mt-3">
+        <h3 class="text-center">Detalhes do Estoque</h3><br>
+        <div class="card">
+            <div class="card-body">
+                <!-- Botão de Voltar -->
+                <div class="row"> 
+                    <div class="col-sm-11">
+                        <h5 class="card-title">Nome do Estoque: {{ estoque[1] }}</h5>
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="{{ url_for('exibe_estoque') }}" class="btn btn-secondary">Voltar</a>
+                    </div>
+                </div>
+                <hr>
+                <!-- Exibindo os detalhes do estoque -->
+                <p class="card-text"><strong>Produto:</strong> {{ estoque[1] }}</p>
+                <p class="card-text"><strong>Categoria:</strong> {{ estoque[2] }}</p>
+                <p class="card-text"><strong>Chegada:</strong> {{ estoque[3] }}</p>
+                <p class="card-text"><strong>Teste:</strong> {{ estoque[4] }}</p>
+                <p class="card-text"><strong>Lote:</strong> {{ estoque[5] }}</p>
+                <p class="card-text"><strong>Validade:</strong> {{ estoque[6] }}</p>
+                <p class="card-text"><strong>Estoque Final:</strong> {{ estoque[7] }}</p>
+                <p class="card-text"><strong>Observações:</strong> {{ estoque[8] }}</p>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer" class="mt-5">
+        <p>Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>

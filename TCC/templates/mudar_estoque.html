@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Editar Estoque</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" media="screen" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid fixed-top" id="navbar">
+                <a class="navbar-brand" href="/tela_inicial">
+                  <!-- Logo -->
+                  <img id="imglogo" src="{{ url_for('static', filename='logomeiopaia.png') }}" alt="" srcset="" height="50 "
+                    width="70" class="d-inline-block align-text-top">
+                </a>
+              </div>
+        </nav>
+    </header><br><br>
+
+    <main id="maincontent" class="mt-3">
+
+        <div id="div" class="container">
+
+            <h3 class="pt-4 text-center">Editar Estoque</h3><br>
+            <form method="POST" action="{{ url_for('editar_estoque', id=estoque[0]) }}">
+                <input id="finput" type="hidden" name="id" value="{{ estoque[0] }}">
+                
+                <label for="produto">Produto:</label>
+                <input id="finput" type="text" class="form-control mx-auto" name="produto" value="{{ estoque[1] }}" required>
+
+                <label for="categoria">Categoria:</label>
+                <input id="finput" type="text" class="form-control mx-auto" name="categoria" value="{{ estoque[2] }}" required>
+
+                <label for="chegada">Chegada:</label>
+                <input id="finput" type="date" class="form-control mx-auto" name="chegada" value="{{ estoque[3] }}" required>
+
+                <label for="teste">Teste:</label>
+                <input id="finput" type="text" class="form-control mx-auto" name="teste" value="{{ estoque[4] }}" required>
+
+                <label for="lote">Lote:</label>
+                <input id="finput" type="text" class="form-control mx-auto" name="lote" value="{{ estoque[5] }}" required>
+
+                <label for="validade">Validade:</label>
+                <input id="finput" type="date" class="form-control mx-auto" name="validade" value="{{ estoque[6] }}" required>
+                
+                <label for="estoque_final">Estoque Final:</label>
+                <input id="finput" type="number" class="form-control mx-auto" name="estoque_final" value="{{ estoque[7] }}" required>
+
+                <label for="obs">Observações <br> (Campo para informar perda de estoque)</label>
+                <textarea id="finput" class="form-control mx-auto" name="obs"></textarea>
+            
+                <button type="submit" class="mt-2" id="botaoEnviar">Salvar</button>
+            
+                <button id="botaoCancelar" class="mt-2" href="{{ url_for('exibe_estoque') }}">Cancelar</button> <br><br>
+            
+            </form>
+        </div>
+    </main>
+    <footer id="footer" class="mt-4">
+        <p>Todos os direitos reservados</p>
+    </footer>
+</body>
+
+</html>

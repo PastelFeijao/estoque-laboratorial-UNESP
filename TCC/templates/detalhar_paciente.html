@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhar Paciente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" media="screen" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid fixed-top" id="navbar">
+                <a class="navbar-brand" href="/tela_inicial">
+                    <!-- Logo -->
+                    <img id="imglogo" src="{{ url_for('static', filename='logomeiopaia.png') }}" alt="" srcset=""
+                        height="50" width="70" class="d-inline-block align-text-top">
+                </a>
+            </div>
+        </nav>
+    </header><br><br>
+
+    <main id="maincontent" class="container mt-3">
+        <h3 class="text-center">Detalhes do Paciente</h3><br>
+        <div class="card">
+            <div class="card-body">
+                <!-- Botão de Voltar -->
+                <div class="row"> 
+                    <div class="col-sm-11">
+                        <h5 class="card-title">Nome do Paciente: {{ paciente[1] }}</h5>
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="{{ url_for('exibe_paciente') }}" class="btn btn-secondary">Voltar</a>
+                    </div>
+                </div>
+                <hr>
+                <!-- Exibindo os detalhes do paciente -->
+                <p class="card-text"><strong>Prontuário:</strong> {{ paciente[2] }}</p>
+                <p class="card-text"><strong>ID Laboratório:</strong> {{ paciente[3] }}</p>
+                <p class="card-text"><strong>Quantia Teste:</strong> {{ paciente[4] }}</p>
+                <p class="card-text"><strong>Hipótese Diagnóstica:</strong> {{ paciente[5] }}</p>
+                <p class="card-text"><strong>Observações:</strong> {{ paciente[6] }}</p>
+                <p class="card-text"><strong>Procedência:</strong> {{ paciente[7] }}</p>
+
+                <!-- Exibindo o ID do exame associado -->
+                <h6><strong>Exame Associado:</strong></h6>
+                <p class="card-text">{{ paciente[8] }}</p>  
+
+                <div class="mt-3">
+                    <div class="form-check">
+                        <!-- Adicionando o id do paciente à checkbox para identificá-la de forma única -->
+                        <input class="form-check-input" type="checkbox" value="" id="descontado_estoque_{{ paciente[2] }}">
+                        <label class="form-check-label" for="descontado_estoque_{{ paciente[2] }}">
+                            Marque para confirmar que o exame foi descontado do estoque.
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer" class="mt-5">
+        <p>Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // Recuperar o ID único do paciente (exemplo: prontuário)
+        const pacienteId = "{{ paciente[2] }}";  // Usando o prontuário como ID
+
+        window.onload = function() {
+            const checkbox = document.getElementById('descontado_estoque_' + pacienteId);
+
+            // Verifica se o estado da checkbox foi salvo anteriormente no localStorage
+            if (localStorage.getItem('checkboxState_' + pacienteId) === 'true') {
+                checkbox.checked = true;
+            } else {
+                checkbox.checked = false;
+            }
+
+            // Salvar o estado da checkbox no localStorage sempre que for alterado
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem('checkboxState_' + pacienteId, checkbox.checked);
+            });
+        };
+    </script>
+
+</body>
+</html>

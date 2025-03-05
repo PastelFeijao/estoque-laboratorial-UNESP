@@ -1,0 +1,306 @@
+    /* codigo de acesso 598764*/
+
+
+ 
+body {
+    background-image: url(tentativa.png);
+    opacity: 1 ;
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position:center;
+
+}
+
+#divsTelainicial{
+    text-decoration: none;
+}
+
+#navbar {
+    background-color: #e0e0eb;
+    margin-top: 0px;
+}
+
+#div {
+    background-color: #fff;
+    width: 30%;
+    border-radius: 10px;
+    height: auto;
+    
+}
+#divs {
+    background-color: #fff;
+    width: 40%;
+    border-radius: 10px;
+    height: auto;
+    
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+ 
+}
+  
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+#inputExames{
+    margin:auto;            
+    border: solid black 1px;
+    border-radius: 5px;
+    margin-left: 3%;
+
+}
+
+#labelE{
+    margin-left: 10vh;
+
+}
+#finput {
+    border-radius: 5px;
+    border: solid grey 1px;
+    width: 55vh;
+
+}
+
+#imglogo {
+    margin-left: 10px;
+}
+#esqueceu {
+    text-decoration: none;
+    font-size: small;
+}
+#mensagemSucesso{
+    color: #fff;
+    text-align: center;
+    background-color: green;
+    padding: 8px;
+    margin: auto;
+    opacity: 0.99;
+
+}
+
+
+#botaoEnviar {
+    background-color: #4D9FFF;
+    color: #fff;
+    padding: 10px 150px;
+    margin: auto;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+}
+
+#botaoCancelar {
+    background-color: #FF0000;
+    color: #fff;
+    padding: 10px 142px;
+    margin: auto;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    text-decoration: none;
+}
+
+
+#cadastro {
+    
+    text-decoration: none;
+    font-size: small;
+
+}
+
+#footer {
+    padding: 50px;
+    background-color: #e0e0eb;
+    color: white;
+    width: 100%;    
+}
+
+/* Css do Cadastro*/
+
+#formtextC {
+    margin:auto;    
+
+    font-size: larger;
+}
+
+#finputC {
+    margin:auto;            
+    border: solid black 1px;
+    border-radius: 5px;
+
+}
+#divsTelainicial{
+    text-decoration: none;
+}
+
+
+
+#botaoCadastrar {
+    background-color: #4D9FFF;
+    color: #fff;
+    padding: 10px 130px;
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+
+}
+
+#divC {
+    background-color: #fff;
+    width: 60vh;
+    margin-top: 80px;
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+
+}
+
+#mensagemErro {
+    color: #fff;
+    text-align: center;
+    background-color: red;
+    padding: 8px;
+    margin: auto;
+    opacity: 0.99;
+    
+}
+#paciente {
+    margin-top: 5%;
+    background-color: #e0e0eb;
+    width: 18rem;
+    margin-left: 13%;
+    margin-right: 1%;
+}
+
+#estoque {
+    margin-top: 5%;
+    background-color: #e0e0eb;
+    width: 18rem;
+    margin-right: 1%;
+}
+
+#exames {
+    margin-top: 5%;
+    background-color: #e0e0eb;
+    width: 18rem;
+    margin-right: 1%;   
+    
+
+
+}
+.target{
+    text-align: center;
+}
+
+
+#LinkTitulo {
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 30px;
+    align-items: center;
+}
+
+#footerTI{
+    padding: 50px;
+    background-color: #e0e0eb;
+    color: white;
+    position: sticky;
+    margin-top: 30px;
+   
+
+}
+/* Css da tela de Visualização de pacientes*/ 
+
+#navbarPacientes {
+    background-color: #e0e0eb;
+    margin-top: 0px;
+}
+
+#divPacientes {
+    background-color: #FFB001;
+    width: 90%;
+    margin: auto;
+    margin-top: 80px;
+}
+
+/* Css do recuperar senha */
+
+#botaoRecuperar{
+    background-color: #4D9FFF;
+    color: #fff;
+    size: 40px;
+    padding: 10px 152px;
+    margin: auto;
+    border-radius: 10px;
+    border: none;
+}
+
+/* Css do Nova senha */
+
+#botaoNovaSenha {
+    background-color: #4D9FFF;
+    color: #fff;
+    padding: 10px 120px;
+    margin: auto;
+    border-radius: 10px;
+    border: none;
+}
+
+/* Css do Estoque*/
+
+#btnCriarItem{
+    background-color: #4D9FFF;
+    color: #fff;
+    padding: 10px 120px;
+    margin: auto;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+}
+
+/* Css da tela itens*/
+
+
+#mainItens{
+    background-color: #e0e0eb;
+    border-radius: 5px;
+}
+/* Css do editar item*/
+
+#div2EditarItem{
+    background-color: #fff;
+    height: 20%;
+    border-radius: 10px;
+    width: 70vh;
+    margin-top: 20vh;
+}
+
+
+#maincontent{
+    min-height: 100vh;
+}
+.hr{
+    width: 100;
+}
+
+
+
+
+
+
+
+
+  
+
+
